@@ -1,27 +1,42 @@
-# HTTP Toolkit - Capture and Debug HTTP Requests
+# Development Tools & Utilities
 
-📺 **[Watch the Tutorial on YouTube](https://youtube.com/@codetoinnovation)**
+Collection of tools and utilities for developers working with APIs, AI, and modern development workflows.
 
-Learn how to capture and inspect HTTP requests and responses from any application using HTTP Toolkit.
+## 📺 Watch on YouTube
 
-## Get Started
-
-See [HTTP_TOOLKIT_SETUP.md](./HTTP_TOOLKIT_SETUP.md) for complete setup and usage instructions.
-
-## What You'll Learn
-
-- Install HTTP Toolkit
-- Capture HTTP/HTTPS traffic from any application
-- Debug requests and responses
-- Inspect headers, body, and timing
-
-## Use Cases
-
-- Debug API integrations
-- Understand third-party API behavior
-- Monitor application network traffic
-- Learn how APIs work
+Subscribe to [Code to Innovation](https://youtube.com/@codetoinnovation) for video tutorials on all these tools.
 
 ---
 
-[← Back to Tutorials](../../)
+## Available Tools
+
+### [HTTP Toolkit](./http-toolkit/)
+Capture and debug HTTP/HTTPS requests from any application.
+
+**Use Cases:**
+- Debug API integrations
+- Inspect request/response data
+- Monitor network traffic
+- Learn how APIs work
+
+**[View Tutorial →](./http-toolkit/)**
+
+---
+
+## Coming Soon
+
+- **Postman** - API testing and documentation
+- **VS Code Extensions** - Top productivity extensions
+- **Git Workflows** - Advanced Git techniques
+- **Docker** - Containerization basics
+- **CI/CD Tools** - Automation pipelines
+
+---
+
+## Suggest a Tool
+
+Have a tool you'd like to see covered? Open an issue or comment on our [YouTube channel](https://youtube.com/@codetoinnovation).
+
+---
+
+[← Back to Main Repository](../)
