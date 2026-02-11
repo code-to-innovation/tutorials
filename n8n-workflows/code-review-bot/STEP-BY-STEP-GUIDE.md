@@ -5,9 +5,9 @@ This workflow automatically reviews GitHub pull requests and posts code quality 
 ## Step 1: GitHub Trigger
 - Drag **GitHub Trigger** node to canvas
 - Configure:
-  - Repository Owner: code-to-innovation' - This is just example
-  - Repository Name: 'tutorials' - This is just example
-  - Events: Select 'pull_request'
+  - Repository Owner: `your-github-username` (example: `code-to-innovation`)
+  - Repository Name: `your-repo-name` (example: `tutorials`)
+  - Events: Select `pull_request`
   - Connect your GitHub credentials
 
 ## Step 2: Build API URLs (Code Node)
@@ -68,33 +68,33 @@ files.forEach(file => {
   const additions = file.json.additions;
   
   if (patch.includes('console.log')) {
-    issues.push(`🔍 **${filename}**: Remove console.log`);
+    issues.push(`**${filename}**: Remove console.log`);
   }
   
   if (patch.includes('debugger')) {
-    issues.push(`🐛 **${filename}**: Remove debugger`);
+    issues.push(`**${filename}**: Remove debugger`);
   }
   
   if (patch.match(/TODO|FIXME/i)) {
-    issues.push(`📝 **${filename}**: TODO/FIXME found`);
+    issues.push(`**${filename}**: TODO/FIXME found`);
   }
   
   if (additions > 500) {
-    suggestions.push(`📦 **${filename}**: Large file`);
+    suggestions.push(`**${filename}**: Large file`);
   }
 });
 
-let comment = '## 🤖 Code Review\n\n';
+let comment = '## Code Review\n\n';
 
 if (issues.length === 0 && suggestions.length === 0) {
-  comment += '✅ No issues found!\n';
+  comment += 'No issues found!\n';
 } else {
   if (issues.length > 0) {
-    comment += '### ❌ Issues\n';
+    comment += '### Issues\n';
     issues.forEach(i => comment += `- ${i}\n`);
   }
   if (suggestions.length > 0) {
-    comment += '\n### 💡 Suggestions\n';
+    comment += '\n### Suggestions\n';
     suggestions.forEach(s => comment += `- ${s}\n`);
   }
 }
@@ -130,12 +130,12 @@ return [{
 ## What This Workflow Does
 
 When a PR is opened or updated, the workflow:
-- ✅ Fetches all changed files
-- 🔍 Checks for `console.log` statements
-- 🐛 Checks for `debugger` statements
-- 📝 Flags TODO/FIXME comments
-- 📦 Warns about large files (>500 lines)
-- 💬 Posts a review comment with findings
+- Fetches all changed files
+- Checks for `console.log` statements
+- Checks for `debugger` statements
+- Flags TODO/FIXME comments
+- Warns about large files (>500 lines)
+- Posts a review comment with findings
 
 ## Customization Ideas
 
