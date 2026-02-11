@@ -119,13 +119,69 @@ return [{
   - Method: `POST`
   - URL: `{{ $json.commentsUrl }}`
   - Authentication: GitHub API credentials
-  - Body: JSON
-  - Add parameter: `body` = `{{ $json.comment }}`
+  - Send Body: Enable
+  - Body Content Type: JSON
+  - Specify Body: Using Fields Below
+  - Add Body Parameter:
+    - Name: `body`
+    - Value: `{{ $json.comment }}`
 
-## Final Steps
-1. Save workflow
-2. Activate workflow
-3. Test by creating a PR in your repository
+## How to Run the Workflow
+
+### Initial Setup
+1. Click **Save** button (top right) to save the workflow
+2. Click the **Active** toggle switch to activate the workflow
+3. The workflow is now listening for GitHub PR events
+
+### Verify Webhook Registration in GitHub
+
+**Check if the webhook is registered:**
+1. Go to your GitHub repository settings: `https://github.com/YOUR-USERNAME/YOUR-REPO/settings/hooks`
+   - Example: `https://github.com/code-to-innovation/tutorials/settings/hooks`
+2. You should see a webhook URL pointing to your n8n instance
+3. Click on the webhook to see:
+   - Recent deliveries
+   - Which events it's subscribed to (should include `pull_request`)
+   - Delivery status (green checkmark = successful)
+
+**Webhook Details:**
+- Payload URL: Your n8n webhook URL (e.g., `https://your-n8n-instance.com/webhook/...`)
+- Content type: `application/json`
+- Events: Pull requests
+- Active: Should have a green checkmark
+
+**Troubleshooting:**
+- If webhook is missing: Deactivate and reactivate the workflow in n8n
+- If webhook shows errors: Check the delivery details for error messages
+- If webhook exists but not firing: Verify the events include `pull_request`
+
+### Testing the Workflow
+
+**Option 1: Create a Test PR**
+1. Go to your GitHub repository
+2. Create a new branch with test code containing:
+   - `console.log()` statements
+   - `debugger` statements
+   - TODO/FIXME comments
+3. Create a Pull Request from your branch to main
+4. The workflow will automatically trigger and post a review comment
+
+**Option 2: Manual Test with Pinned Data**
+1. In n8n, click on the **GitHub Trigger** node
+2. Click **Execute Node** button
+3. Use the test data to simulate a PR event
+4. Watch each node execute in sequence
+
+**Option 3: Test Existing PR**
+1. Update an existing open PR (push new commits)
+2. The workflow triggers on the `synchronize` event
+3. Check the PR for the automated review comment
+
+### Verify It's Working
+- Check your n8n workflow executions (left sidebar)
+- Look for the review comment on your GitHub PR
+- Review any error messages in failed executions
+- Check webhook delivery history in GitHub Settings
 
 ## What This Workflow Does
 
