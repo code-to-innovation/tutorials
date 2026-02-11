@@ -1,4 +1,4 @@
-# GitHub PR Code Review Automation - n8n Workflow
+# GitHub PR Code Review Automation - n8n Workflow Step By Step Guide
 
 This workflow automatically reviews GitHub pull requests and posts code quality feedback as comments.
 
