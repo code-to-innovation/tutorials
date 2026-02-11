@@ -1,4 +1,4 @@
-# n8n Workflows
+# n8n Workflows for Code Review Bot
 
 Collection of production-ready n8n workflows from Code to Innovation.
 
