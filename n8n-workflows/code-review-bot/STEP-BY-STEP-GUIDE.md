@@ -5,9 +5,9 @@ This workflow automatically reviews GitHub pull requests and posts code quality 
 ## Step 1: GitHub Trigger
 - Drag **GitHub Trigger** node to canvas
 - Configure:
-  - Repository Owner: `code-to-innovation`
-  - Repository Name: `tutorials`
-  - Events: Select `pull_request`
+  - Repository Owner: code-to-innovation' - This is just example
+  - Repository Name: 'tutorials' - This is just example
+  - Events: Select 'pull_request'
   - Connect your GitHub credentials
 
 ## Step 2: Build API URLs (Code Node)
