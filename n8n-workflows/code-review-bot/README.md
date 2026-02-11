@@ -1,4 +1,4 @@
-# n8n Workflows Code Review Demo
+# n8n Workflows
 
 Collection of production-ready n8n workflows from Code to Innovation.
 
