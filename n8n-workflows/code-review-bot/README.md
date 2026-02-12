@@ -1,6 +1,6 @@
 # n8n Workflows for Code Review Bot Demo Application
 
-Collection of production-ready n8n workflows from Code to Innovation.
+This Collection is production-ready n8n workflows from Code to Innovation.
 
 ## Workflows
 
