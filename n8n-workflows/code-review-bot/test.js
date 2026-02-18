@@ -1,2 +1,2 @@
 debugger;
-console.log("testing")
+console.log("some log here")
